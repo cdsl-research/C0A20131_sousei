@@ -1,0 +1,16 @@
+method:
+  DNS:
+    Domeine: manato-log
+    IP:
+    - 192.168.100.143
+    - 192.168.100.189
+  Step: '10'
+  Web:
+    IP:
+    - 192.168.100.143
+    URL: http://192.168.100.143/manato/
+  log:
+    IP:
+    - 192.168.100.143
+    - 192.168.150.1
+    path: /var/log/td-agent/nginx/access.log.b5ebd3b0e0e07075e159e85ea77a52e9f.log
