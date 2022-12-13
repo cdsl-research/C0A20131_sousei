@@ -1,19 +1,13 @@
-from surveillance import ping2
-from apl import apl_print
-from web import web_print
-import select_mode
-select = select_mode.get_select() 
-print(select)
-if select == "death":
-    a = ping2.print_ping()
-    print(a)
-if select == "apl":
-    b = apl_print.print_apl()
-    print(b)
-if select == "web":
-    c = web_print.web_print()
-    print(c)
-else:
-    print("失敗")
-
-
+import yaml
+import select_m
+import time
+with open('conf.yaml','r') as file:
+         sel = yaml.safe_load(file)
+         sel2 = sel["method"]
+         sel3 = sel2["Step"]
+         cnt = 0
+         while True:
+            selct = select_m.get_select()
+            print(selct)
+            time.sleep(int(sel3))
+            cnt +=1
