@@ -1,6 +1,6 @@
 import subprocess #subprocessをインポート
-import yaml
-def alive_rule(IP,num):#pingを送る関数
+
+def alive(IP,num):#pingを送る関数
     print(IP)
     for ip in IP:
         res = subprocess.run(["ping",str(ip),"-c",str(num), "-W","300"],stdout=subprocess.PIPE)##-cは疎通確認の回数、-W>は死活監視のタイムア>ウト指定(300m秒)
@@ -12,14 +12,6 @@ def alive_rule(IP,num):#pingを送る関数
             print("失敗")
             return False
         print("----------")
-def main():
-    with open('./conf.yaml','r') as file:
-        alive1 = yaml.safe_load(file)
-        alive2 = alive1["module"]
-        alive3 = alive2["alive"]
-        alive_count = alive3["alive_count"]
-        alive_server_ipaddr = alive3["alive_server_ipaddr"]
-        alive_rule(alive_server_ipaddr,alive_count)
-        
-       
-
+def main(**kwargs):
+    alive(kwargs["alive_server_ipaddr"],kwargs["alive_count"])
+    

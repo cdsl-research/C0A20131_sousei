@@ -1,5 +1,4 @@
 import subprocess
-import yaml
 def dns(name,num):
     num2 = 0
     while True:
@@ -14,12 +13,6 @@ def dns(name,num):
         print("----------")
         num2 += 1
         
-def main():
-    with open('./conf.yaml','r') as file:
-        dns1 = yaml.safe_load(file)
-        dns2 = dns1["module"]
-        dns3 = dns2["dns"]
-        dns_count = dns3["dns_count"]
-        domain_name = dns3["domain_name"]       
-        dns(domain_name,dns_count)
-       
+def main(**kwargs):     
+    dns(kwargs["domain_name"],kwargs["dns_count"])
+    

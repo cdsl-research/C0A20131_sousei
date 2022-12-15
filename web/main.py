@@ -1,6 +1,5 @@
 import requests
 import subprocess
-import yaml
 def web(url,num):
     num2 = 0
     while True:
@@ -15,14 +14,9 @@ def web(url,num):
         print("----------")
         num2 += 1
         
-def main():
-    with open('./conf.yaml','r') as file:
-       web1 = yaml.safe_load(file)
-       web2 = web1["module"]
-       web3 = web2["web"]
-       web_count = web3["web_count"]
-       web_url = web3["web_url"]
-       web(web_url,web_count)
-       
+def main(**kwargs):
+    web(kwargs["web_url"],kwargs["web_count"])
+    
+    
        
        
