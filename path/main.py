@@ -13,7 +13,7 @@ def Path(IP,num):#pingを送る関数
         print("----------")
     
 def main():
-    with open('../conf.yaml','r') as file:
+    with open('./conf.yaml','r') as file:
         path1 = yaml.safe_load(file)
         path2 = path1["module"]
         path3 = path2["path"]
@@ -21,6 +21,3 @@ def main():
         path_server_ipaddr = path3["path_server_ipaddr"]
         Path(path_server_ipaddr,path_count)
         
-if __name__ == '__main__':
-    main()
-    

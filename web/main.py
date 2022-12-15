@@ -16,7 +16,7 @@ def web(url,num):
         num2 += 1
         
 def main():
-    with open('../conf.yaml','r') as file:
+    with open('./conf.yaml','r') as file:
        web1 = yaml.safe_load(file)
        web2 = web1["module"]
        web3 = web2["web"]
@@ -26,5 +26,3 @@ def main():
        
        
        
-if __name__ == '__main__':
-    main()

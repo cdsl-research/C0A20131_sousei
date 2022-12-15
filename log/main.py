@@ -12,7 +12,7 @@ def log(log,num):
         num2 += 1
         
 def main():
-    with open('../conf.yaml','r') as file:
+    with open('./conf.yaml','r') as file:
        log1 = yaml.safe_load(file)
        log2 = log1["module"]
        log3 = log2["log"]
@@ -20,5 +20,3 @@ def main():
        log_path = log3["log_path"]
        log(log_path,log_count)
    
-if __name__ == '__main__':
-    main()
