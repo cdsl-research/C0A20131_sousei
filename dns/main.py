@@ -7,12 +7,14 @@ def dns(name,num):
         Addr = subprocess.run(["nslookup",name],stdout=subprocess.PIPE)
         print(Addr.stdout.decode("cp932"))
         if Addr.returncode == 0:
-            print("成功")
+            ans = "成功"
+            #print("成功")
         else:
-            return False
+            #return False
+            ans = "失敗"
         print("----------")
         num2 += 1
+    return ans
         
 def main(**kwargs):     
-    dns(kwargs["domain_name"],kwargs["dns_count"])
-    
+    return dns(kwargs["domain_name"],kwargs["dns_count"])

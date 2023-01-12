@@ -19,18 +19,6 @@ module: #ここのモジュールの設定を記述
     - 192.168.150.10
 
 conditions: |- #条件記載部
-  if DNS() == False: 
-    WEB()
-# conditions: #条件記載部
-#   first: #1番目の処理
-#     success: #成功した場合
-#     failure: #失敗した場合
-#   second: #2番目の処理
-#     success: #成功した場合
-#     failure: #失敗した場合
-#   third: #3番目の処理
-#     success: #成功した場合
-#     failure: #失敗した場合
-#   fourth: #4番目の処理
-#     success: #成功した場合
-#     failure: #失敗した場合
+  if module_list[1].main(**list[1]) == "成功":
+      module_list[4].main(**list[4])
+      module_list[1].main(**list[1])

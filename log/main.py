@@ -7,9 +7,12 @@ def log(log,num):
             a = len(file.readlines())
             print(a)
         if a == 0:
-            return False
+            count = a
         num2 += 1
+    return a
         
 def main(**kwargs):
-    log(kwargs["log_path"],kwargs["log_count"])
+    return log(kwargs["log_path"],kwargs["log_count"])
+   
+
    
