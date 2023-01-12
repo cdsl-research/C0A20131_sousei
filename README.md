@@ -51,7 +51,16 @@ conditionが条件記載部
 
 module_list[0].main(**list[0])は, dnsモジュールを使用することを示す．
 
-モジュールの選択はmodule_list[番号].main(**list[番号])で行う.0から始まる.
+モジュールの選択はmodule_list[番号].main(**list[番号])で行う. 0から始まる.
+
+### 実行
+run.pyを動かす．コマンドは以下
+```
+python3 run.py
+```
+
+
+
 
 
 
